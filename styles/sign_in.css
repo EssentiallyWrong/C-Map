@@ -1,0 +1,15 @@
+
+#firebaseui-auth-container {
+    position: absolute;
+    width: 100%;
+    margin-top: 15%;
+
+
+}
+
+#map {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    opacity: 50%;
+}
