@@ -7,7 +7,7 @@ $('#submit').on('click', function (e) {
 
 
             $('#textVal').val(' ');
-            db.collection("Posts").doc("Venue").set({
+            db.collection("Posts").doc("Venue").add({
                     name: $textVal + ' added at ' + dateAdded,
                 })
                 .then(function () {
