@@ -7,8 +7,8 @@ $('#submit').on('click', function (e) {
 
 
             $('#textVal').val(' ');
-            db.collection("Posts").doc("Venue").add({
-                    name: $textVal + ' added at ' + dateAdded,
+            db.collection("Posts").add({
+                    "name": $textVal + ' added at ' + dateAdded,
                 })
                 .then(function () {
                     console.log("Document successfully written!");
