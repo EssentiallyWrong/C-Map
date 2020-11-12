@@ -18,7 +18,7 @@ $('#submit').on('click', function (e) {
 
         });
 });
-$('#edit').hide(1000);
+
 $("#hide").on('click', function (e) {
     
     if ($('#edit').is(":visible")){
