@@ -25,13 +25,25 @@ $('#submit').on('click', function (e) {
         .withConverter(venueConverter)
         .set(new Venue("BCIT", "Tony", "WHATTHEHELL"));
 });
-$('#edit').hide(1000);
-$("#hide").on('click', function (e) {
+$("#edit").hide();
 
-    if ($('#edit').is(":visible")) {
-        $('#edit').hide(1000);
+$(".change").on('click', function (e) {
+    if($('#edit').is(":visible")){
+
+        $('#edit').hide(200);
+        $("#info").show(200);
     } else {
-        $("#edit").show(1000);
+        $("#info").hide(200);
+        $('#edit').show(200);
+    }
+});
+
+$(".hidePane").on('click', function (e) {
+
+    if ($('#overlay').is(":visible")){
+        $('#overlay').hide(1000);
+    } else {
+        $("#overlay").show(1000);
     }
 
-})
+});

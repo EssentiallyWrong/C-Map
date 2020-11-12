@@ -1,4 +1,3 @@
-
 #navBar {
     width: 100%;
     height: 10vh;
@@ -8,11 +7,12 @@
     width: 100%;
     height: 90vh;
     position: relative
-  }
+}
 
 #map {
     width: 100%;
     height: 100%;
+    position: absolute;
 }
 
 #searchBar {
@@ -21,4 +21,21 @@
     left: 0;
     width: 50%;
     margin-left: 50%;
+}
+
+#edit {
+    width:100%;
+    
+}
+#info{
+    height: 60vh;
+
+}
+
+#overlay {
+    width: 100vw;
+    overflow: auto;
+    height: 60vh;
+    position: absolute;
+    bottom: 0;
 }
