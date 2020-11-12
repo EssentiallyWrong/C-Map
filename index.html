@@ -49,19 +49,20 @@
              &q=BCIT,Burnaby+BC" allowfullscreen>
         </iframe>
 
-        <div id = "searchBar"> <nav class="navbar navbar">
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </nav>
+        <div id="searchBar">
+            <nav class="navbar navbar">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
-        <div id = "overlay">
-            <div class="card" id="edit" >
+        <div id="overlay">
+            <div class="card" id="edit">
                 <div class="card-body">
 
 
@@ -120,21 +121,62 @@
                 <input type="submit" value="change pane" class="change">
             </div>
 
-            <div class="card" id="info" >
+            <div class="card" id="info">
                 <div class="card-body">
+                    <h5 class="card-title dummyPost">Info page</h5>
 
+                    <div id="posts">
+                        
+                        
 
-                    <h5 class="card-title">Info page</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Use the following to add new information</h6>
+                        <div class="card userpost" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Dummy Post</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">User</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
 
+                        <div class="card userpost" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Dummy Post</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">User</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
 
-                    <div>
-                        <ol class="listItems">
+                        <div class="card userpost" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Dummy Post</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">User</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card userpost" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Dummy Post</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">User</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
 
-                        </ol>
                     </div>
-                    <input type="textarea" placeholder="What to do?" id="textVal">
-                    <input type="submit" value="To do!" id="submit">
+
+
+
                 </div>
                 <input type="submit" value="hide/show" class="hidePane">
                 <input type="submit" value="change pane" class="change">
