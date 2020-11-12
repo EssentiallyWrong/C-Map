@@ -17,11 +17,18 @@ $('#submit').on('click', function (e) {
             console.error("Error writing document: ", error);
 
         });
+    db.collection("venues").doc()
+        .withConverter(venueConverter)
+        .set(new Venue("BCIT", "Steven", "WHATTHEHELL"));
+
+    db.collection("venues").doc()
+        .withConverter(venueConverter)
+        .set(new Venue("BCIT", "Tony", "WHATTHEHELL"));
 });
 $('#edit').hide(1000);
 $("#hide").on('click', function (e) {
-    
-    if ($('#edit').is(":visible")){
+
+    if ($('#edit').is(":visible")) {
         $('#edit').hide(1000);
     } else {
         $("#edit").show(1000);
