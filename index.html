@@ -49,12 +49,149 @@
              &q=BCIT,Burnaby+BC" allowfullscreen>
         </iframe>
 
-        <div id = "searchBar"> <nav class="navbar navbar">
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </nav></div>
+        <div id="searchBar">
+            <nav class="navbar navbar">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+        <div id="overlay">
+            <div class="card" id="edit">
+                <div class="card-body">
+
+
+                    <h5 class="card-title">Add Info</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Use the following to add new information</h6>
+
+
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect2">Example multiple select</label>
+                            <select multiple class="form-control" id="exampleFormControlSelect2">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Example textarea</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="ExposureDate">Exposure Date:</label>
+                            <input type="date" id="ExposureDate" name="ExDate">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+
+
+
+                    <div>
+                        <ol class="listItems">
+
+                        </ol>
+                    </div>
+                    <input type="textarea" placeholder="What to do?" id="textVal">
+                    <input type="submit" value="To do!" id="submit">
+                </div>
+                <input type="submit" value="hide/show" class="hidePane">
+                <input type="submit" value="change pane" class="change">
+            </div>
+
+            <div class="card" id="info">
+                <div class="card-body">
+                    <h5 class="card-title dummyPost">Info page</h5>
+
+                    <div id="posts">
+                        
+                        
+
+                        <div class="card userpost" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Dummy Post</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">User</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+
+                        <div class="card userpost" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Dummy Post</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">User</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+
+                        <div class="card userpost" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Dummy Post</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">User</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+                        
+                        <div class="card userpost" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">Dummy Post</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">User</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+                <input type="submit" value="hide/show" class="hidePane">
+                <input type="submit" value="change pane" class="change">
+            </div>
+
+
+        </div>
+
+
+        <script src="scripts/getPosts.js"></script>
+        <script src="scripts/timestamp.js"></script>
+
+    </div>
+
+
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navBar">

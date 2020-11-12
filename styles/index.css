@@ -39,3 +39,12 @@
     position: absolute;
     bottom: 0;
 }
+#posts{
+    display : flex;
+    
+}
+.card.userpost{
+    margin:10px;
+}
+
+
