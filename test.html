@@ -39,7 +39,7 @@
 
     <!-- Your own Firebase API key information -->
     <script src="scripts/firebase_api_group21.js"> </script>
-    
+
     <div id="holder">
         <iframe id="map" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBjBtROdBuojxtLYrGnk_JP1DaCD_qBSwk
              &q=BCIT,Burnaby+BC" allowfullscreen>
@@ -55,69 +55,94 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    
 
-    <div class="card" id = "edit"style="width: 99vw;">
-        <div class="card-body">
+        <div id = "overlay">
+            <div class="card" id="edit" >
+                <div class="card-body">
 
+
+                    <h5 class="card-title">Add Info</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Use the following to add new information</h6>
+
+
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect2">Example multiple select</label>
+                            <select multiple class="form-control" id="exampleFormControlSelect2">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">Example textarea</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="ExposureDate">Exposure Date:</label>
+                            <input type="date" id="ExposureDate" name="ExDate">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+
+
+
+                    <div>
+                        <ol class="listItems">
+
+                        </ol>
+                    </div>
+                    <input type="textarea" placeholder="What to do?" id="textVal">
+                    <input type="submit" value="To do!" id="submit">
+                </div>
+                <input type="submit" value="hide/show" class="hidePane">
+                <input type="submit" value="change pane" class="change">
+            </div>
+
+            <div class="card" id="info" >
+                <div class="card-body">
+
+
+                    <h5 class="card-title">Info page</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Use the following to add new information</h6>
+
+
+                    <div>
+                        <ol class="listItems">
+
+                        </ol>
+                    </div>
+                    <input type="textarea" placeholder="What to do?" id="textVal">
+                    <input type="submit" value="To do!" id="submit">
+                </div>
+                <input type="submit" value="hide/show" class="hidePane">
+                <input type="submit" value="change pane" class="change">
+            </div>
             
-          <h5 class="card-title">Add Info</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Use the following to add new information</h6>
-
-
-          <form>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Example select</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlSelect2">Example multiple select</label>
-                <select multiple class="form-control" id="exampleFormControlSelect2">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="ExposureDate">Exposure Date:</label>
-                <input type="date" id="ExposureDate" name="ExDate">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-
-
-
-          <div>
-            <ol class="listItems">
-    
-            </ol>
+            
         </div>
-        <input type="textarea" placeholder="What to do?" id="textVal">
-        <input type="submit" value="To do!" id="submit">
-        </div>
-        <input type="submit" value="hide/show" id="hide">
-      </div>
 
-      
 
-    <script src="scripts/timestamp.js"></script>
-        
+
+        <script src="scripts/timestamp.js"></script>
+
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navBar">
@@ -153,10 +178,10 @@
             </svg></a>
     </nav>
 
-    
 
 
-    
+
+
 
 </body>
 

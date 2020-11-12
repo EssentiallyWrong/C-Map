@@ -1,4 +1,3 @@
-
 #navBar {
     width: 100%;
     height: 10vh;
@@ -8,7 +7,7 @@
     width: 100%;
     height: 90vh;
     position: relative
-  }
+}
 
 #map {
     width: 100%;
@@ -25,9 +24,18 @@
 }
 
 #edit {
-    overflow: auto;
+    width:100%;
+    
+}
+#info{
     height: 60vh;
 
-    position : absolute;
+}
+
+#overlay {
+    width: 100vw;
+    overflow: auto;
+    height: 60vh;
+    position: absolute;
     bottom: 0;
 }
