@@ -3,27 +3,21 @@ $('#submit').on('click', function (e) {
     var $listItems = $('.listItems');
     var dateAdded = new Date();
 
-    $listItems.prepend('<li>' + $textVal + ' added at ' + dateAdded + '</li>');
+    $listItems.prepend('<li>' + 'Your post has been submitted.' + '</li>');
 
 
     $('#textVal').val(' ');
-    db.collection("Posts").add({
-            "name": $textVal + ' added at ' + dateAdded,
-        })
-        .then(function () {
+
+    db.collection("venues").doc()
+        .withConverter(venueConverter)
+        .set(new Venue("BCIT", "Steven", $textVal, dateAdded))
+        .then(function() {
             console.log("Document successfully written!");
         })
-        .catch(function (error) {
+        .catch(function(error) {
             console.error("Error writing document: ", error);
-
         });
-    db.collection("venues").doc()
-        .withConverter(venueConverter)
-        .set(new Venue("BCIT", "Steven", "WHATTHEHELL"));
 
-    db.collection("venues").doc()
-        .withConverter(venueConverter)
-        .set(new Venue("BCIT", "Tony", "WHATTHEHELL"));
 });
 $("#edit").hide();
 
