@@ -25,11 +25,10 @@
 
 #edit {
     width:100%;
-    
 }
+
 #info{
     height: 60vh;
-
 }
 
 #overlay {
@@ -39,12 +38,34 @@
     position: absolute;
     bottom: 0;
 }
+
 #posts{
     display : flex;
-    
 }
-.card.userpost{
+
+.card.userpost {
     margin:10px;
 }
+
+/*
+Background color for information cards.
+.card.userpost {
+    background-color: #6497b1;
+}
+*/
+
+/*
+Background color for information form.
+.card-body {
+    background-color: #b3cde0;
+}
+*/
+
+.bg-dark {
+    background-color: #7289da !important;
+  }
+
+
+
 
 
