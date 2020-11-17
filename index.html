@@ -7,12 +7,18 @@
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIBKj6b6VZA668pd590ddr5bsku03ReYc&callback=initAutocomplete&libraries=places&v=weekly"
+        defer></script>
+
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- Optional styles and scripts of your own -->
     <link rel="stylesheet" href="styles/index.css" />
+    <script src="scripts/index.js"> </script>
 </head>
 
 <body>
@@ -45,18 +51,15 @@
 
 
     <div id="holder">
-        <iframe id="map" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBjBtROdBuojxtLYrGnk_JP1DaCD_qBSwk
-             &q=BCIT,Burnaby+BC" allowfullscreen>
-        </iframe>
+        <input
+      id="pac-input"
+      class="controls"
+      type="text"
+      placeholder="Search Box"
+        />
+        <div id="map"></div>
 
-        <div id="searchBar">
-            <nav class="navbar navbar">
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </nav>
-        </div>
+        
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
@@ -126,8 +129,8 @@
                     <h5 class="card-title dummyPost">Info page</h5>
 
                     <div id="posts">
-                        
-                        
+
+
 
                         <div class="card userpost" style="width: 18rem;">
                             <div class="card-body">
@@ -161,7 +164,7 @@
                                 <a href="#" class="card-link">Another link</a>
                             </div>
                         </div>
-                        
+
                         <div class="card userpost" style="width: 18rem;">
                             <div class="card-body">
                                 <h5 class="card-title">Dummy Post</h5>
