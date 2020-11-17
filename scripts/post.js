@@ -42,3 +42,8 @@ $(".hidePane").on('click', function (e) {
 
 });
 
+$(".showPane").on('click', function (e) {
+    $("#overlay").show(1000);
+    
+
+});

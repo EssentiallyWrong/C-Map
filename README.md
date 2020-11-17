@@ -30,9 +30,17 @@ It has the following subfolders and files:
 ├── images                   # Folder for images
     /                        #
 ├── scripts                  # Folder for scripts
-    /                        #
+    /app.js                  #
+    /firebase_api_group21.js # API key for firebase
+    /index.js                # Functionality for map page
+    /login.js                # Functionality for login page
+    /post.js                 # Functionality for posts
+    /venue.js                # Constructor for venue objects
 ├── styles                   # Folder for styles
-    /                        #
+    /app.css                 #
+    /homepage.css            #
+    /index.css               #
+    /sign_in.css             #
 
 Firebase hosting files:
 ├── .firebaserc...
