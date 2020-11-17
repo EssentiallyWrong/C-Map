@@ -24,6 +24,7 @@
 }
 
 #edit {
+
   width: 100%;
 
 }
@@ -31,6 +32,14 @@
 #info {
 
   height: 60vh;
+=======
+    width:100%;
+}
+
+#info{
+
+    height:60vh;
+
 
 }
 
@@ -80,8 +89,42 @@
   font-weight: bold;
 }
 
+
 #infowindow-content {
   display: none;
+=======
+#posts{
+    display : flex;
+}
+
+.card.userpost {
+    margin:10px;
+}
+
+/*
+Background color for information cards.
+.card.userpost {
+    background-color: #6497b1;
+}
+*/
+
+/*
+Background color for information form.
+.card-body {
+    background-color: #b3cde0;
+}
+*/
+
+.bg-dark {
+    background-color: #7289da !important;
+  }
+
+
+
+
+    justify-content: space-between;
+
+
 }
 
 #map #infowindow-content {
