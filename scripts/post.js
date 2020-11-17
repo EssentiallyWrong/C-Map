@@ -41,3 +41,4 @@ $(".hidePane").on('click', function (e) {
     }
 
 });
+
