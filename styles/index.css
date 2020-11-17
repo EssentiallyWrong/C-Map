@@ -32,7 +32,7 @@
 #info {
 
   height: 60vh;
-=======
+
     width:100%;
 }
 
@@ -92,10 +92,11 @@
 
 #infowindow-content {
   display: none;
-=======
+}
 #posts{
     display : flex;
 }
+
 
 .card.userpost {
     margin:10px;
@@ -117,7 +118,7 @@ Background color for information form.
 
 .bg-dark {
     background-color: #7289da !important;
-  }
+  
 
 
 
