@@ -33,10 +33,10 @@ function initMap() {
   const infowindowContent = document.getElementById("infowindow-content");
 
   var testPlaceId = 'ChIJVVVVVVXlUVMRu-GPNDD5qKw';
-// adding markers from firestore;
+  // adding markers from firestore;
 
   // marker test
-  
+
   var service = new google.maps.places.PlacesService(map);
   service.getDetails({
     placeId: testPlaceId
@@ -49,8 +49,8 @@ function initMap() {
       }
     });
   });
-  
-  
+
+
 
   new google.maps.Marker({
     position: myLatLng,
@@ -115,4 +115,6 @@ function initMap() {
 
 
 
+
 //end of map stuff
+
