@@ -1,49 +1,29 @@
-$('#submit').on('click', function (e) {
-    var $textVal = $('#textVal').val();
-    var $listItems = $('.listItems');
-    var dateAdded = new Date();
-
-    $listItems.prepend('<li>' + 'Your post has been submitted.' + '</li>');
-
-
-    $('#textVal').val(' ');
-
-    db.collection("venues").doc()
-        .withConverter(venueConverter)
-        .set(new Venue("BCIT", "Steven", $textVal, dateAdded))
-        .then(function() {
-            console.log("Document successfully written!");
-        })
-        .catch(function(error) {
-            console.error("Error writing document: ", error);
-        });
-
-});
-$("#edit").hide();
-
-$(".change").on('click', function (e) {
-    if($('#edit').is(":visible")){
-
-        $('#edit').hide(200);
-        $("#info").show(200);
-    } else {
-        $("#info").hide(200);
-        $('#edit').show(200);
+class Post {
+    constructor(venueID, userID, userName, post, timeStamp) {
+        this.venueID = venueID;
+        this.userName = userName;
+        this.userID = userID;
+        this.post = post;
+        this.timeStamp = timeStamp;
     }
-});
-
-$(".hidePane").on('click', function (e) {
-
-    if ($('#overlay').is(":visible")){
-        $('#overlay').hide(1000);
-    } else {
-        $("#overlay").show(1000);
+    toString() {
+        return this.venueID + ', ' + this.userName + ', ' + this.userID + ', ' + this.post + ', ' + this.timeStamp;
     }
+}
 
-});
-
-$(".showPane").on('click', function (e) {
-    $("#overlay").show(1000);
-    
-
-});
+// Firestore data converter
+var postConverter = {
+    toFirestore: function (post) {
+        return {
+            venueID: post.venueID,
+            userName: post.userName,
+            userID: post.userID,
+            post: post.post,
+            timeStamp: post.timeStamp
+        }
+    },
+    fromFirestore: function (snapshot, options) {
+        const data = snapshot.data(options);
+        return new Post(data.venueID, data.userName, data.userID, data.post, data.timeStamp)
+    }
+}

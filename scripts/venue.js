@@ -1,12 +1,11 @@
 class Venue {
-    constructor(venue, name, post, timeStamp) {
-        this.venue = venue;
-        this.name = name
-        this.post = post;
-        this.timeStamp = timeStamp;
+    constructor(venueID, venueName) {
+        this.venueID = venueID;
+        this.venueName = venueName
+
     }
     toString() {
-        return this.venue + ', ' + this.name + ', ' + this.post + ', ' + this.timeStamp;
+        return this.venueID + ', ' + this.venueName;
     }
 }
 
@@ -14,14 +13,12 @@ class Venue {
 var venueConverter = {
     toFirestore: function (venue) {
         return {
-            venue: venue.venue,
-            name: venue.name,
-            post: venue.post,
-            timeStamp: venue.timeStamp
+            venueID: venue.venueID,
+            venueName: venue.venueName,
         }
     },
     fromFirestore: function (snapshot, options) {
         const data = snapshot.data(options);
-        return new Venue(data.venue, data.name, data.post, data.timeStamp)
+        return new Venue(data.venueID, data.venueName)
     }
 }
