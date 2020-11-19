@@ -5,7 +5,10 @@ function initMap() {
   // end of my code
   const map = new google.maps.Map(document.getElementById("map"), {
     mapTypeControl: false,
-    center: { lat: 49.2827, lng: -123.1207 },
+    center: {
+      lat: 49.2827,
+      lng: -123.1207
+    },
     zoom: 13,
   });
   const input = document.getElementById("pac-input");
@@ -17,10 +20,12 @@ function initMap() {
   const infowindow = new google.maps.InfoWindow();
   const infowindowContent = document.getElementById("infowindow-content");
   infowindow.setContent(infowindowContent);
-  const marker = new google.maps.Marker({ map: map });
+  const marker = new google.maps.Marker({
+    map: map
+  });
   marker.addListener("click", () => {
     $("#overlay").show(1000);
-    
+
     infowindow.open(map, marker);
   });
   autocomplete.addListener("place_changed", () => {
@@ -53,5 +58,3 @@ function initMap() {
   });
 }
 //end of map stuff
-
-
