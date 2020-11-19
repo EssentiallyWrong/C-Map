@@ -4,6 +4,7 @@ function initMap() {
   $('#overlay').hide();
   // end of my code
   const map = new google.maps.Map(document.getElementById("map"), {
+    mapTypeControl: false,
     center: { lat: 49.2827, lng: -123.1207 },
     zoom: 13,
   });
@@ -12,7 +13,7 @@ function initMap() {
   autocomplete.bindTo("bounds", map);
   // Specify just the place data fields that you need.
   autocomplete.setFields(["place_id", "geometry", "name"]);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
   const infowindow = new google.maps.InfoWindow();
   const infowindowContent = document.getElementById("infowindow-content");
   infowindow.setContent(infowindowContent);
