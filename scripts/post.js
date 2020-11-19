@@ -13,7 +13,7 @@ class Post {
 
 // Firestore data converter
 var postConverter = {
-    toFirestore: function (post) {
+    toFirestore: function(post) {
         return {
             venueID: post.venueID,
             userName: post.userName,
