@@ -48,7 +48,7 @@ $('#submit').on('click', function (e) {
 
 
 // Did you mean to delete this? I just saw it was removed in your merge so wanted to make sure before I wrecked everything
-$(".change").on('click', function (e) {
+/*$(".change").on('click', function (e) {
     if ($('#edit').is(":visible")) {
 
         $('#edit').hide(200);
@@ -74,5 +74,5 @@ $(".showPane").on('click', function (e) {
 
 
 });
-
+*/
 // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
