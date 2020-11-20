@@ -13,16 +13,24 @@ $('#submit').on('click', function (e) {
 
     //working on validation of identical inputs already present, should only update the post
     //instead of creating a whole new document for each identical venue.
-    var venueRef = db.collection("Venue").where($placeID, "==", true).get()
+    //this function here is asynchronous, so nest the if else statement inside a function call
+    //in the function(doc) so make it execute at the proper time.
+    var venueRef = db.collection("Venue").where("venueID", "==", $placeID);
+    venueRef.get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            venueRef = doc.id
+            //function call here perhaps
+        });
+    });
 
-    if (venueRef.exists) {
-        var venueOverride = venueRef.id;
-        db.collection("Venue").doc(venueOverride)
+    if (venueRef == $placeID) {
+        db.collection("Venue").doc(venueRef)
             .collection("posts").doc()
             .withConverter(postConverter)
             .set(new Post($placeName, $userName, $userID, $textVal, dateAdded));
 
         //This part ^^^ is the one not doing it so far, statement just moves to else each time.
+        //
 
     } else {
         var venueIdentifier = db.collection("Venue").doc().id;
