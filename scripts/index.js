@@ -1,3 +1,18 @@
+
+var markerTest;
+function readQuote(){
+  db.collection("readTests").doc("testId")
+  .onSnapshot(function(snap){
+      console.log(snap.data());   //print the document fields of "01"
+      console.log(snap.data().fuckingTest);
+      document.getElementById("readTest").innerText = snap.data().gPlaceId;
+      markerTest = snap.data().gPlaceId;
+  })
+}
+
+readQuote();
+
+
 //map init
 function initMap() {
   // my code
@@ -32,14 +47,14 @@ function initMap() {
   const infowindow = new google.maps.InfoWindow();
   const infowindowContent = document.getElementById("infowindow-content");
 
-  var testPlaceId = 'ChIJVVVVVVXlUVMRu-GPNDD5qKw';
+  var testPlaceId = "ChIJ5f5T_SF3hlQRnRB6ZAeyWjU";
   // adding markers from firestore;
 
   // marker test
 
   var service = new google.maps.places.PlacesService(map);
   service.getDetails({
-    placeId: testPlaceId
+    placeId: testPlaceId,
   }, function (result, status) {
     var marker = new google.maps.Marker({
       map: map,
