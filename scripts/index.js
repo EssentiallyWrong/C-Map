@@ -1,14 +1,31 @@
 
 var markerTest;
 function readQuote(){
+
+  
   db.collection("readTests").doc("testId")
   .onSnapshot(function(snap){
       console.log(snap.data());   //print the document fields of "01"
       console.log(snap.data().fuckingTest);
-      document.getElementById("readTest").innerText = snap.data().gPlaceId;
       markerTest = snap.data().gPlaceId;
+     // document.getElementById("readTest").innerText = snap.data().gPlaceId;
+      var temp = snap.data.gPlaceId;
+      markerTest =  'ChIJs0-pQ_FzhlQRi_OBm-qWkbs';
   })
 }
+
+function postRead(){
+
+  
+  db.collection("readTests").doc("dObVaNLqiOcsHHnq7ym9").collection("Post").doc("asdf")
+  .onSnapshot(function(snap){
+    document.getElementById("readTest").innerText = snap.data().post;
+      
+  })
+}
+
+postRead();
+
 
 readQuote();
 
@@ -47,7 +64,7 @@ function initMap() {
   const infowindow = new google.maps.InfoWindow();
   const infowindowContent = document.getElementById("infowindow-content");
 
-  var testPlaceId = "ChIJ5f5T_SF3hlQRnRB6ZAeyWjU";
+  var testPlaceId = markerTest;
   // adding markers from firestore;
 
   // marker test
