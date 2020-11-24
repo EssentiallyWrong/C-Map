@@ -22,7 +22,7 @@ postRead();
 
 
 function fillCards() {
-    db.collection("readTests").doc("dObVaNLqiOcsHHnq7ym9").collection("Post")
+    db.collection("Venue").doc("1jXg7iSHlnq8DQe98kyH").collection("posts")
         .get()
         .then(function (snap) {
             var i = 0;
@@ -51,7 +51,7 @@ fillCards();
 
 
 
-function addCard(s) {
+function addCard() {
 
     $("#posts").append(
 
@@ -67,38 +67,10 @@ function addCard(s) {
 
 }
 
-//addCard();
+addCard();
 
 
 
 
 
 
-function carlyCode(mycollection) {
-    db.collection(mycollection)
-        .get()
-        .then(function (snap) {
-            var i = 0;
-            snap.forEach(function (doc) {
-                console.log(doc.data());
-                var name = doc.data().name;
-                var address = doc.data().hood;
-                i = i + 1;
-                var card = "#c" + i;
-                console.log(card);
-                var d1 = $("posts").append(
-                    "<div class='card user' style='width: 18rem;'>" +
-                    "<img class='card-img-top' src='images/blah.jpg' alt='Card image cap'>" +
-                    "<div class='card-body'>" +
-                    "<h5 class='card-title'>" + name + "</h5>" +
-                    "<p class='card-text'> " + address + "</p>" +
-                    "<a href='#' class='btn btn-primary'>Go somewhere</a>" +
-                    "<div class='ratings'>" +
-                    "* * * * * (stars go here)" +
-                    "</div)" +
-                    "</div>" +
-                    "</div)");
-            })
-        })
-}
-carlyCode("Venue")
