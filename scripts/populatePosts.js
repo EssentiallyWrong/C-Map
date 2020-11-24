@@ -19,6 +19,25 @@ function postRead() {
 
 postRead();
 
+//ChIJ5f5T_SF3hlQRnRB6ZAeyWjU
+
+function testCheck() {
+    db.collection("Venue")
+        .get()
+        .then(function (snap) {
+            snap.forEach(function (doc) {
+                console.log(doc.data());
+                if(doc.data().venueID == "ChIJ5f5T_SF3hlQRnRB6ZAeyWjU"){
+                    fillCards();
+                }
+                
+
+            })
+        })
+}
+
+testCheck();
+
 
 
 function fillCards() {
@@ -47,7 +66,7 @@ function fillCards() {
         })
 }
 
-fillCards();
+
 
 
 
