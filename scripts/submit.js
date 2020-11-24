@@ -17,22 +17,8 @@ $('#submit').on('click', function (e) {
     //in the function(doc) so make it execute at the proper time.
     var venueRef = db.collection("Venue").where("venueID", "==", $placeID);
     venueRef.get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
-            var venueID = doc.id;
-            console.log(venueID);
-            if (doc.exists) {
-                db.collection("Venue").doc(venueID)
-                    .collection("posts").doc()
-                    .withConverter(postConverter)
-                    .set(new Post($placeName, $userName, $userID, $textVal, dateAdded));
-
-
-                //This part ^^^ is the one not doing it so far, statement just moves to else each time.
-                //Try to work with some timeouts or something before this if statement in case it is being processed
-                //before the asynchronous server query above is finished.
-
-            } else {
-                console.log("else!!")
+        if (querySnapshot.empty) {
+            console.log("No existing...Creating new venue!!");
                 var venueIdentifier = db.collection("Venue").doc().id;
 
                 db.collection("Venue").doc(venueIdentifier)
@@ -49,13 +35,21 @@ $('#submit').on('click', function (e) {
                     .catch(function (error) {
                         console.error("Error writing document: ", error);
                     });
+        } else {
+            querySnapshot.forEach(function (doc) {
+                var venueID = doc.id;
+                console.log(venueID);
+                if (doc.exists) {
+                    console.log("detected existing....updating!!!");
+                    db.collection("Venue").doc(venueID)
+                        .collection("posts").doc()
+                        .withConverter(postConverter)
+                        .set(new Post($placeName, $userName, $userID, $textVal, dateAdded));
 
-            }
+                }
+            });
+        }
 
-        });
     });
-
-
-
 
 });
