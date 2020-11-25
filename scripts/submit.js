@@ -25,6 +25,7 @@ $('#submit').on('click', function (e) {
                     .collection("posts").doc()
                     .withConverter(postConverter)
                     .set(new Post($placeName, $userName, $userID, $textVal, dateAdded));
+                    testCheck($placeID);
 
         } else {
             querySnapshot.forEach(function (doc) {
@@ -36,7 +37,7 @@ $('#submit').on('click', function (e) {
                         .collection("posts").doc()
                         .withConverter(postConverter)
                         .set(new Post($placeName, $userName, $userID, $textVal, dateAdded));
-
+                        testCheck($placeID);
                 }
             });
         }

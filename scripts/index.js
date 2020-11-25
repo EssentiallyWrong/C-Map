@@ -27,8 +27,6 @@ function postRead() {
 postRead();
 
 
-readQuote();
-
 
 //map init
 function initMap() {
@@ -61,6 +59,8 @@ function initMap() {
   // Specify just the place data fields that you need.
   autocomplete.setFields(["place_id", "geometry", "name"]);
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
+ 
+
   const infowindow = new google.maps.InfoWindow();
   const infowindowContent = document.getElementById("infowindow-content");
 
@@ -106,6 +106,7 @@ function initMap() {
 
 
   marker.addListener("click", () => {
+    $("#overlay").show(1000);
 
 
     infowindow.open(map, marker);
@@ -113,9 +114,12 @@ function initMap() {
   autocomplete.addListener("place_changed", () => {
     
     $("#overlay").show(1000);
-    testCheck();
+   
     infowindow.close();
     const place = autocomplete.getPlace();
+
+    testCheck(place.place_id);
+    console.log(place.place_id);
 
     if (!place.geometry) {
       return;
