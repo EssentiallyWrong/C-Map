@@ -36,23 +36,23 @@ function testCheck() {
         })
 }
 
-testCheck();
+
 
 
 
 function fillCards() {
+    
     db.collection("Venue").doc("1jXg7iSHlnq8DQe98kyH").collection("posts")
         .get()
         .then(function (snap) {
             var i = 0;
+            $("#posts").append('<div id = "disposable"> </div>');
             snap.forEach(function (doc) {
                 console.log(doc.data());
                 var post = doc.data().post;
                 var address = doc.data().hood;
-                i = i + 1;
-                var card = "#c" + i;
-                console.log(card);
-                $("#posts").append(
+                
+                $("#disposable").append(
                     '<div class="card userpost" >' +
                     '<div class="card-body">' +
                     '<h5 class="card-title">Dummy Post</h5>' +

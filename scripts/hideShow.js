@@ -1,6 +1,8 @@
 $("#edit").hide();
 
 
+
+
 $(".change").on('click', function (e) {
     if($('#edit').is(":visible")){
 

@@ -1,27 +1,27 @@
-
 var markerTest;
-function readQuote(){
 
-  
+function readQuote() {
+
+
   db.collection("readTests").doc("testId")
-  .onSnapshot(function(snap){
-      console.log(snap.data());   //print the document fields of "01"
+    .onSnapshot(function (snap) {
+      console.log(snap.data()); //print the document fields of "01"
       console.log(snap.data().fuckingTest);
       markerTest = snap.data().gPlaceId;
-     // document.getElementById("readTest").innerText = snap.data().gPlaceId;
+      // document.getElementById("readTest").innerText = snap.data().gPlaceId;
       var temp = snap.data.gPlaceId;
-      markerTest =  'ChIJs0-pQ_FzhlQRi_OBm-qWkbs';
-  })
+      markerTest = 'ChIJs0-pQ_FzhlQRi_OBm-qWkbs';
+    })
 }
 
-function postRead(){
+function postRead() {
 
-  
+
   db.collection("readTests").doc("dObVaNLqiOcsHHnq7ym9").collection("Post").doc("asdf")
-  .onSnapshot(function(snap){
-    document.getElementById("readTest").innerText = snap.data().post;
-      
-  })
+    .onSnapshot(function (snap) {
+      document.getElementById("readTest").innerText = snap.data().post;
+
+    })
 }
 
 postRead();
@@ -106,11 +106,14 @@ function initMap() {
 
 
   marker.addListener("click", () => {
-    $("#overlay").show(1000);
+
 
     infowindow.open(map, marker);
   });
   autocomplete.addListener("place_changed", () => {
+    
+    $("#overlay").show(1000);
+    testCheck();
     infowindow.close();
     const place = autocomplete.getPlace();
 
@@ -130,6 +133,8 @@ function initMap() {
       location: place.geometry.location,
     });
     marker.setVisible(true);
+    //document.getElementById("map").style
+    document.getElementById("disposable").remove();
     $("#locationName").text(place.name);
     $("#googlePlaceID").text(place.place_id);
     infowindowContent.children.namedItem("place-name").textContent = place.name;
@@ -149,4 +154,3 @@ function initMap() {
 
 
 //end of map stuff
-
