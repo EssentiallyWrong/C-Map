@@ -138,7 +138,7 @@ function initMap() {
     });
     marker.setVisible(true);
     //document.getElementById("map").style
-    document.getElementById("disposable").remove();
+    
     $("#locationName").text(place.name);
     $("#googlePlaceID").text(place.place_id);
     infowindowContent.children.namedItem("place-name").textContent = place.name;
