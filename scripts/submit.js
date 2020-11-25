@@ -6,15 +6,11 @@ $('#submit').on('click', function (e) {
     var $userID = $('#userID').text();
     var $placeID = $('#googlePlaceID').text();
     var $placeName = $('#locationName').text();
-    var $textVal = $('#textVal').val();
+    var $textVal = $('#exampleFormControlTextarea1').val();
     var dateAdded = new Date();
 
     $('#textVal').val(' ');
 
-    //working on validation of identical inputs already present, should only update the post
-    //instead of creating a whole new document for each identical venue.
-    //this function here is asynchronous, so nest the if else statement inside a function call
-    //in the function(doc) so make it execute at the proper time.
     var venueRef = db.collection("Venue").where("venueID", "==", $placeID);
     venueRef.get().then(function (querySnapshot) {
         if (querySnapshot.empty) {
@@ -28,13 +24,8 @@ $('#submit').on('click', function (e) {
                 db.collection("Venue").doc(venueIdentifier)
                     .collection("posts").doc()
                     .withConverter(postConverter)
-                    .set(new Post($placeName, $userName, $userID, $textVal, dateAdded))
-                    .then(function () {
-                        console.log("Document successfully written!");
-                    })
-                    .catch(function (error) {
-                        console.error("Error writing document: ", error);
-                    });
+                    .set(new Post($placeName, $userName, $userID, $textVal, dateAdded));
+
         } else {
             querySnapshot.forEach(function (doc) {
                 var venueID = doc.id;
