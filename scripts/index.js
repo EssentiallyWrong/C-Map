@@ -1,5 +1,5 @@
 var markerTest;
-
+/*
 function readQuote() {
 
 
@@ -25,7 +25,7 @@ function postRead() {
 }
 
 postRead();
-
+*/
 
 
 //map init
