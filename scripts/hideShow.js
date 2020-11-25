@@ -1,4 +1,5 @@
 $("#edit").hide();
+$("#googlePlaceID").hide();
 
 
 
