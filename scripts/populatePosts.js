@@ -89,6 +89,7 @@ function fillCards(venue) {
                 console.log(doc.data());
                 var post = doc.data().post;
                 var userId = doc.data().userID;
+                var title = doc.data().title;
 
                 if (userId == ""){
                     userId = "Anonymous";
@@ -98,7 +99,7 @@ function fillCards(venue) {
                 $("#disposable").append(
                     '<div class="card userpost"   >' +
                     '<div class="card-body">' +
-                    '<h5 class="card-title">Dummy Post</h5>' +
+                    '<h5 class="card-title">'+ title +'</h5>' +
                     '<h6 class="card-subtitle mb-2 text-muted">' + userId + '</h6>' +
                     ' <p class="card-text">' + post + "</p>" +
 
