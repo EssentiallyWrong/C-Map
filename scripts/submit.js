@@ -6,6 +6,7 @@ $('#submit').on('click', function (e) {
     var $userID = $('#userID').text();
     var $placeID = $('#googlePlaceID').text();
     var $placeName = $('#locationName').text();
+    var $textTitle = $('#exampleFormControlInput1').val();
     var $textVal = $('#exampleFormControlTextarea1').val();
     var dateAdded = new Date();
 
@@ -24,7 +25,7 @@ $('#submit').on('click', function (e) {
             db.collection("Venue").doc(venueIdentifier)
                 .collection("posts").doc()
                 .withConverter(postConverter)
-                .set(new Post($placeName, $userName, $userID, $textVal, dateAdded));
+                .set(new Post($placeName, $userName, $userID, $textTitle, $textVal, dateAdded));
             testCheck($placeID);
 
         } else {
@@ -36,7 +37,7 @@ $('#submit').on('click', function (e) {
                     db.collection("Venue").doc(venueID)
                         .collection("posts").doc()
                         .withConverter(postConverter)
-                        .set(new Post($placeName, $userName, $userID, $textVal, dateAdded));
+                        .set(new Post($placeName, $userName, $userID, $textTitle, $textVal, dateAdded));
                     testCheck($placeID);
                 }
             });
