@@ -14,10 +14,10 @@ $('#submit').on('click', function (e) {
 
     if($textTitle == ""|| $textVal == ""){
 
-        $listItems.prepend('<li>' + 'Fields Required' + '</li>');
+        $listItems.text( 'Fields Required' );
     } else {
 
-        $listItems.prepend('<li>' + 'Your post has been submitted.' + '</li>');
+        $listItems.text('Your post has been submitted.' );
 
     var venueRef = db.collection("Venue").where("venueID", "==", $placeID);
     venueRef.get().then(function (querySnapshot) {
