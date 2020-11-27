@@ -13,7 +13,7 @@ function getUser() {
                 .doc(user.uid)
                 .get()
                 .then(function (doc) {
-                    var n = doc.data().name;
+                    var n = user.name;
                     var g = user.uid;
                     $("#userName").append(n);
                     $("#userID").append(g);

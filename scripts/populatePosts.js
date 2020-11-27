@@ -94,7 +94,7 @@ function fillCards(venue) {
                 if (userId == ""){
                     userId = "Anonymous";
                 }
-                
+
 
                 $("#disposable").append(
                     '<div class="card userpost"   >' +
