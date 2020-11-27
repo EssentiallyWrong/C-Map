@@ -1,5 +1,8 @@
 $("#edit").hide();
 $("#googlePlaceID").hide();
+$("#userName").hide();
+//$("#userID").hide();
+
 
 
 
