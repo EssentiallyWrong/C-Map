@@ -178,4 +178,11 @@ Background color for information form.
   width:  50px;
   background-color: white;
   border: white;
+  
+}
+
+.time {
+  
+  text-align: right;
+ margin: 0px;
 }
