@@ -6,7 +6,7 @@ function readQuote() {
             document.getElementById("abc").innerText = snap.data().message;
         })
 }
-
+/*
 function postRead() {
 
 
@@ -23,7 +23,7 @@ postRead();
 
 
 //ChIJ5f5T_SF3hlQRnRB6ZAeyWjU
-/*
+
 function testCheck(str) {
     db.collection("Venue")
         .get()
@@ -88,7 +88,7 @@ function fillCards(venue) {
             snap.forEach(function (doc) {
                 console.log(doc.data());
                 var post = doc.data().post;
-                var address = doc.data().hood;
+                
 
                 $("#disposable").append(
                     '<div class="card"   >' +
