@@ -1,6 +1,6 @@
 $('#submit').on('click', function (e) {
     var $listItems = $('.listItems');
-    $listItems.prepend('<li>' + 'Your post has been submitted.' + '</li>');
+    
 
     var $userName = $('#userName').text();
     var $userID = $('#userID').text();
@@ -11,6 +11,13 @@ $('#submit').on('click', function (e) {
     var dateAdded = new Date();
 
     $('#textVal').val(' ');
+
+    if($textTitle == ""|| $textVal == ""){
+
+        $listItems.text( 'Fields Required' );
+    } else {
+
+        $listItems.text('Your post has been submitted.' );
 
     var venueRef = db.collection("Venue").where("venueID", "==", $placeID);
     venueRef.get().then(function (querySnapshot) {
@@ -44,5 +51,7 @@ $('#submit').on('click', function (e) {
         }
 
     });
+
+}
 
 });
