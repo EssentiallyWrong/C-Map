@@ -24,3 +24,13 @@ function getUser() {
     })
 }
 getUser();
+
+function disableLoginLink() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            document.getElementById("loginlink").href = "index.html";
+            document.getElementById("loginlink").innerHTML = "Logout";
+        }
+    })
+}
+disableLoginLink();
