@@ -94,9 +94,7 @@ function fillCards(venue) {
                 var post = doc.data().post;
                 var userId = doc.data().userID;
                 var title = doc.data().title;
-                
-
-                var time = doc.data().timeStamp.toDate();
+                var time = doc.data().timeStamp;
 
                 if (userId == "") {
                     userId = "Anonymous";
