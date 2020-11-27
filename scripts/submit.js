@@ -50,7 +50,7 @@ $('#submit').on('click', function (e) {
                     }
                 });
             }
-            
+
 
         });
        $('#exampleFormControlInput1').text("");
