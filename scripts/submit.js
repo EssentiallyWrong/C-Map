@@ -25,7 +25,7 @@ $('#submit').on('click', function (e) {
             db.collection("Venue").doc(venueIdentifier)
                 .collection("posts").doc()
                 .withConverter(postConverter)
-                .set(new Post($placeName, $userName, $userID, $textTitle, $textVal, dateAdded));
+                .set(new Post($placeID, $userName, $userID, $textTitle, $textVal, dateAdded));
             testCheck($placeID);
 
         } else {
@@ -37,7 +37,7 @@ $('#submit').on('click', function (e) {
                     db.collection("Venue").doc(venueID)
                         .collection("posts").doc()
                         .withConverter(postConverter)
-                        .set(new Post($placeName, $userName, $userID, $textTitle, $textVal, dateAdded));
+                        .set(new Post($placeID, $userName, $userID, $textTitle, $textVal, dateAdded));
                     testCheck($placeID);
                 }
             });
