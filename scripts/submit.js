@@ -14,30 +14,30 @@ $('#submit').on('click', function (e) {
     var venueRef = db.collection("Venue").where("venueID", "==", $placeID);
     venueRef.get().then(function (querySnapshot) {
         if (querySnapshot.empty) {
-            console.log("No existing...Creating new venue!!");
-                var venueIdentifier = db.collection("Venue").doc().id;
+            console.log("No existing Venue ...Creating new venue!!");
+            var venueIdentifier = db.collection("Venue").doc().id;
 
-                db.collection("Venue").doc(venueIdentifier)
-                    .withConverter(venueConverter)
-                    .set(new Venue($placeID, $placeName));
+            db.collection("Venue").doc(venueIdentifier)
+                .withConverter(venueConverter)
+                .set(new Venue($placeID, $placeName));
 
-                db.collection("Venue").doc(venueIdentifier)
-                    .collection("posts").doc()
-                    .withConverter(postConverter)
-                    .set(new Post($placeName, $userName, $userID, $textVal, dateAdded));
-                    testCheck($placeID);
+            db.collection("Venue").doc(venueIdentifier)
+                .collection("posts").doc()
+                .withConverter(postConverter)
+                .set(new Post($placeName, $userName, $userID, $textVal, dateAdded));
+            testCheck($placeID);
 
         } else {
             querySnapshot.forEach(function (doc) {
                 var venueID = doc.id;
                 console.log(venueID);
                 if (doc.exists) {
-                    console.log("detected existing....updating!!!");
+                    console.log("detected existing venue....updating!!!");
                     db.collection("Venue").doc(venueID)
                         .collection("posts").doc()
                         .withConverter(postConverter)
                         .set(new Post($placeName, $userName, $userID, $textVal, dateAdded));
-                        testCheck($placeID);
+                    testCheck($placeID);
                 }
             });
         }

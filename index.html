@@ -86,14 +86,15 @@
 
                     <!-- This is where you enter your text for a post -->
                     <div class="form-group">
+                        <!-- this right here is where I am getting post ^^^^^ entries from -->
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
                     </div>
                     <!-- Button to submit post -> submit.js called on click. -->
                     <input type="submit" class="btn btn-primary" value="Submit" id="submit">
                 </div>
 
-                
-                
+
+
 
             </div>
 
@@ -103,7 +104,9 @@
                         <input type="submit" value="X" class="hidePane">
                         <p id="locationName">this didnt work</p>
                         <p id="googlePlaceID">place holder</p>
-                        
+                        <p id="userName"></p>
+                        <p id="userID"></p>
+
                     </h5>
 
 
@@ -114,16 +117,16 @@
                     </div>
 
 
-                    
+
                 </div>
                 <input type="submit" value="Add Comment" class="change" id = "changeStyle">
-                
+
             </div>
 
 
         </div>
 
-
+        <script src="scripts/currentUser.js"></script>
         <script src="scripts/venue.js"></script>
         <script src="scripts/post.js"></script>
         <script src="scripts/submit.js"></script>
@@ -167,7 +170,6 @@
     </nav>
 
     <script src="scripts/populatePosts.js"></script>
-
     <script src="scripts/hideShow.js"></script>
     <script src="scripts/index.js"> </script>
 
