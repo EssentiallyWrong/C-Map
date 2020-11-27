@@ -88,13 +88,14 @@ function fillCards(venue) {
             snap.forEach(function (doc) {
                 console.log(doc.data());
                 var post = doc.data().post;
+                var userId = doc.data().userID;
                 
 
                 $("#disposable").append(
                     '<div class="card userpost"   >' +
                     '<div class="card-body">' +
                     '<h5 class="card-title">Dummy Post</h5>' +
-                    '<h6 class="card-subtitle mb-2 text-muted">User</h6>' +
+                    '<h6 class="card-subtitle mb-2 text-muted">' + userId + '</h6>' +
                     ' <p class="card-text">' + post + "</p>" +
 
                     '</div>' +

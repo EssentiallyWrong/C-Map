@@ -3,6 +3,16 @@ $("#googlePlaceID").hide();
 
 
 
+$(".goBack").on('click', function (e) {
+    if($('#edit').is(":visible")){
+
+        $('#edit').hide(200);
+        $("#info").show(200);
+    } else {
+        $("#info").hide(200);
+        $('#edit').show(200);
+    }
+});
 
 $(".change").on('click', function (e) {
     if($('#edit').is(":visible")){
