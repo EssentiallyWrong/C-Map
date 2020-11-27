@@ -89,6 +89,10 @@ function fillCards(venue) {
                 console.log(doc.data());
                 var post = doc.data().post;
                 var userId = doc.data().userID;
+
+                if (userId == ""){
+                    userId = "Anonymous";
+                }
                 
 
                 $("#disposable").append(
