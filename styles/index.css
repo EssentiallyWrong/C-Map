@@ -58,8 +58,13 @@
 #posts {
   display: flex;
   justify-content: space-between;
+  
 
 }
+#disposable > div {
+  margin: 10px;
+}
+
 
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -104,6 +109,9 @@
 
 
 .card.userpost {
+    border-width: 2.5px;
+    border-color: #4d90fe;
+    border-radius: 10px;
     width: 98%;
     margin:10px;
 }
