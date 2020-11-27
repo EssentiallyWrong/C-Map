@@ -94,6 +94,9 @@ function fillCards(venue) {
                 var post = doc.data().post;
                 var userId = doc.data().userID;
                 var title = doc.data().title;
+                
+
+                var time = doc.data().timeStamp.toDate();
 
                 if (userId == "") {
                     userId = "Anonymous";
@@ -106,6 +109,7 @@ function fillCards(venue) {
                     '<h5 class="card-title">' + title + '</h5>' +
                     '<h6 class="card-subtitle mb-2 text-muted">' + userId + '</h6>' +
                     ' <p class="card-text">' + post + "</p>" +
+                    ' <p class="time">' + time + "</p>" +
 
                     '</div>' +
                     '</div>')

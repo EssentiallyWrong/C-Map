@@ -48,14 +48,16 @@ $('#submit').on('click', function (e) {
                             .set(new Post($placeName, $userName, $userID, $textTitle, $textVal, dateAdded));
                         testCheck($placeID);
                     }
-                });
+                }); 
             }
+            $('#exampleFormControlInput1').val('');
+            $('#exampleFormControlTextarea1').val('');
 
 
         });
-       $('#exampleFormControlInput1').text("");
-       $('#exampleFormControlTextarea1').text("");
+
 
     }
+
 
 });
