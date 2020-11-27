@@ -19,34 +19,25 @@
 
 #edit {
   border-color: white;
-
   width: 100%;
-
 }
 
 #info {
   border-color: white;
-
-  
-    width:100%;
+  width: 100%;
 }
+
 #changeStyle {
-  
   height: 30px;
-  
   margin-left: 20px;
   margin-right: 70px;
   background-color: rgb(248, 245, 245);
   text-align: left;
-  
-  
-  
 }
-
 
 #overlay {
   border-top-left-radius: 25px;
-  border-top-right-radius:  25px;
+  border-top-right-radius: 25px;
   background-color: #fff;
   width: 100vw;
   overflow: auto;
@@ -58,10 +49,9 @@
 #posts {
   display: flex;
   justify-content: space-between;
-  
-
 }
-#disposable > div {
+
+#disposable>div {
   margin: 10px;
 }
 
@@ -102,18 +92,19 @@
 #infowindow-content {
   display: none;
 }
-#posts{
-    display : flex;
-    flex-direction: column;
+
+#posts {
+  display: flex;
+  flex-direction: column;
 }
 
 
 .card.userpost {
-    border-width: 2px;
-    border-color: #4d90fe;
-    border-radius: 10px;
-    width: 98%;
-    margin:10px;
+  border-width: 2px;
+  border-color: #4d90fe;
+  border-radius: 10px;
+  width: 98%;
+  margin: 10px;
 }
 
 /*
@@ -131,15 +122,8 @@ Background color for information form.
 */
 
 .bg-dark {
-    background-color: #7289da !important;
-  
-
-
-
-
-    justify-content: space-between;
-
-
+  background-color: #7289da !important;
+  justify-content: space-between;
 }
 
 #map #infowindow-content {
@@ -166,7 +150,7 @@ Background color for information form.
 .hidePane {
   float: right;
   height: 50px;
-  width:  50px;
+  width: 50px;
   background-color: white;
   border: white;
 }
@@ -175,7 +159,7 @@ Background color for information form.
   font-size: 30px;
   float: right;
   height: 50px;
-  width:  50px;
+  width: 50px;
   background-color: white;
   border: white;
 }
