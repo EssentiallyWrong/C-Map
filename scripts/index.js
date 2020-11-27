@@ -1,4 +1,3 @@
-var markerTest;
 /*
 function readQuote() {
 
@@ -53,50 +52,76 @@ function initMap() {
   };
 
 
+
+
   const input = document.getElementById("pac-input");
   const autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo("bounds", map);
   // Specify just the place data fields that you need.
   autocomplete.setFields(["place_id", "geometry", "name"]);
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
- 
+
 
   const infowindow = new google.maps.InfoWindow();
   const infowindowContent = document.getElementById("infowindow-content");
 
-  var testPlaceId = markerTest;
+
   // adding markers from firestore;
 
   // marker test
 
-  var service = new google.maps.places.PlacesService(map);
-  service.getDetails({
-    placeId: testPlaceId,
-  }, function (result, status) {
-    var marker = new google.maps.Marker({
-      map: map,
-      place: {
-        placeId: testPlaceId,
-        location: result.geometry.location
-      }
+
+
+
+
+  db.collection("Venue").get()
+    .then(function (snap) {
+      snap.forEach(function (doc) {
+        var id = doc.data().venueID
+
+
+        var request = {
+          placeId: id
+        };
+
+        var service = new google.maps.places.PlacesService(map);
+
+        service.getDetails(request, function (place, status) {
+
+          if (status == google.maps.places.PlacesServiceStatus.OK) {
+
+            var m = new google.maps.Marker({
+              map: map,
+              position: place.geometry.location
+            });
+
+            google.maps.event.addListener(m, 'click', function () {
+
+              $("#locationName").text(place.name);
+              $("#googlePlaceID").text(place.place_id);
+              $("#overlay").show(1000);
+              testCheck(place.place_id);
+
+              infowindowContent.children.namedItem("place-name").textContent = place.name;
+              infowindowContent.children.namedItem("place-id").textContent =
+                place.place_id;
+              
+              
+              infowindow.open(map, m)
+            });
+          }
+        });
+
+      });
+
     });
-  });
 
 
 
-  new google.maps.Marker({
-    position: myLatLng,
-    map,
-    title: "Hello World!",
-  });
 
-  new google.maps.Marker({
-    position: myLat,
-    map,
-    title: "Another",
-  });
 
   infowindow.setContent(infowindowContent);
+
 
 
 
@@ -106,15 +131,16 @@ function initMap() {
 
 
   marker.addListener("click", () => {
+
     $("#overlay").show(1000);
 
 
     infowindow.open(map, marker);
   });
   autocomplete.addListener("place_changed", () => {
-    
+
     $("#overlay").show(1000);
-   
+
     infowindow.close();
     const place = autocomplete.getPlace();
 
@@ -138,15 +164,15 @@ function initMap() {
     });
     marker.setVisible(true);
     //document.getElementById("map").style
-    
+
     $("#locationName").text(place.name);
     $("#googlePlaceID").text(place.place_id);
     infowindowContent.children.namedItem("place-name").textContent = place.name;
     infowindowContent.children.namedItem("place-id").textContent =
       place.place_id;
-    infowindowContent.children.namedItem("place-address").textContent =
-      place.formatted_address;
+    
     infowindow.open(map, marker);
+
 
 
 

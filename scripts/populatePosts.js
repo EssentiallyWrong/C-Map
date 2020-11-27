@@ -42,6 +42,10 @@ function testCheck(str) {
 }*/
 var venueRef;
 
+
+marker();
+;
+
 function testCheck(str) {
     document.getElementById("disposable").remove();
 
@@ -60,14 +64,14 @@ function testCheck(str) {
 
                 }
             });
-         /**   querySnapshot.forEach(function (doc) {
+            /**   querySnapshot.forEach(function (doc) {
 
-                var venueIdentifier = doc.id;
-                console.log(venueIdentifier.venueID);
-                fillCards(valueIdentifier);
+                   var venueIdentifier = doc.id;
+                   console.log(venueIdentifier.venueID);
+                   fillCards(valueIdentifier);
 
 
-            })*/
+               })*/
         }
 
     });
@@ -84,14 +88,14 @@ function fillCards(venue) {
         .then(function (snap) {
             var i = 0;
 
-            $("#posts").append('<div id = "disposable"> </div>');
+            $("#posts").append('<div id = "disposable">  </div>');
             snap.forEach(function (doc) {
                 console.log(doc.data());
                 var post = doc.data().post;
                 var userId = doc.data().userID;
                 var title = doc.data().title;
 
-                if (userId == ""){
+                if (userId == "") {
                     userId = "Anonymous";
                 }
 
@@ -99,7 +103,7 @@ function fillCards(venue) {
                 $("#disposable").append(
                     '<div class="card userpost"   >' +
                     '<div class="card-body">' +
-                    '<h5 class="card-title">'+ title +'</h5>' +
+                    '<h5 class="card-title">' + title + '</h5>' +
                     '<h6 class="card-subtitle mb-2 text-muted">' + userId + '</h6>' +
                     ' <p class="card-text">' + post + "</p>" +
 
