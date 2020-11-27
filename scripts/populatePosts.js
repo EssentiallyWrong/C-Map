@@ -35,7 +35,7 @@ function testCheck(str) {
                 } else {
                     addEmptyCard();
                 }
-                
+
 
             })
         })
@@ -44,7 +44,7 @@ var venueRef;
 
 function testCheck(str) {
     document.getElementById("disposable").remove();
-    
+
     venueRef = db.collection("Venue").where("venueID", "==", str);
     venueRef.get().then(function (querySnapshot) {
         if (querySnapshot.empty) {
@@ -56,7 +56,7 @@ function testCheck(str) {
                 console.log(venueID);
                 if (doc.exists) {
                     fillCards(db.collection("Venue").doc(venueID));
-                   
+
 
                 }
             });
