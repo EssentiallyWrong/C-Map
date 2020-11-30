@@ -94,7 +94,10 @@ function fillCards(venue) {
                 var post = doc.data().post;
                 var userId = doc.data().userID;
                 var title = doc.data().title;
-                var time = doc.data().timeStamp.toDate();
+
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                var time = doc.data().timeStamp.toDate().toLocaleDateString(undefined , options);
+                
 
                 if (userId == "") {
                     userId = "Anonymous";
@@ -125,9 +128,7 @@ function addEmptyCard() {
 
         '<div class="card userpost" id = "no-posts" >' +
         '<div class="card-body">' +
-
         ' <p class="card-text">' + "No comments yet</p>" +
-
         '</div>' +
         '</div>'
     )
