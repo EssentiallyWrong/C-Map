@@ -96,8 +96,7 @@ function fillCards(venue) {
                 var title = doc.data().title;
 
                 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                var time = doc.data().timeStamp.toDate().toLocaleDateString(undefined , options);
-                
+                var time = doc.data().timeStamp;
 
                 if (userId == "") {
                     userId = "Anonymous";
