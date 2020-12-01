@@ -12,6 +12,7 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIBKj6b6VZA668pd590ddr5bsku03ReYc&callback=initMap&libraries=places&v=weekly"
         defer></script>
 
+        <script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -62,7 +63,12 @@
         <div id="overlay">
             <div class="card" id="edit">
                 <div class="card-body">
-                    <input type="submit" value='<' class="change" id="goBack">
+                    <div id = "backButton">
+                        
+                    <input type="submit" value = '🔙' class="change" id="goBack">
+                    
+                    
+                </div>
                     <h5 class="card-title">Add Comment</h5>
 
                     <h6 class="card-subtitle mb-2 text-muted">Enter your post below.</h6>
