@@ -1,45 +1,5 @@
-function readQuote() {
-    db.collection("quotes").doc("01")
-        .onSnapshot(function (snap) {
-            console.log(snap.data()); //print the document fields of "01"
-            console.log(snap.data().message);
-            document.getElementById("abc").innerText = snap.data().message;
-        })
-}
-/*
-function postRead() {
 
 
-    db.collection("readTests").doc("dObVaNLqiOcsHHnq7ym9").collection("Post").doc("asdf")
-        .onSnapshot(function (snap) {
-            document.getElementById("readTest").innerText = snap.data().post;
-
-        })
-}
-
-postRead();
-
-
-
-
-//ChIJ5f5T_SF3hlQRnRB6ZAeyWjU
-
-function testCheck(str) {
-    db.collection("Venue")
-        .get()
-        .then(function (snap) {
-            snap.forEach(function (doc) {
-                console.log(doc.data());
-                if(doc.data().venueID == str){
-                    fillCards();
-                } else {
-                    addEmptyCard();
-                }
-
-
-            })
-        })
-}*/
 var venueRef;
 
 
