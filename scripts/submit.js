@@ -1,3 +1,10 @@
+//------------------------------------------------------------------------------------------
+// Performs a number of functions and actions when the submit button is clicked on the "Add Posts"
+// overlay. This script defines the actions that will occur when a user clicks the submit button to
+// store their post after typing it in.
+//
+//------------------------------------------------------------------------------------------
+
 $('#submit').on('click', function (e) {
     var $listItems = $('.listItems');
     var $userName = $('#userName').text();
@@ -6,6 +13,13 @@ $('#submit').on('click', function (e) {
     var $placeName = $('#locationName').text();
     var $textTitle = $('#exampleFormControlInput1').val();
     var $textVal = $('#exampleFormControlTextarea1').val();
+
+    //------------------------------------------------------------------------------------------
+    // These area is responsible for creation of date object to represent the timeStamp for
+    // when the submit button was clicked. It then formats it into a more user-friendly
+    // string and outputs the result into a variable used in the post constructor.
+    //------------------------------------------------------------------------------------------
+
     var dateAdded = new Date();
     var a_p = "";
     var curr_date = dateAdded.getDate();
@@ -19,12 +33,19 @@ $('#submit').on('click', function (e) {
     } else {
         a_p = "PM";
     }
+
     if (curr_hour == 0) {
         curr_hour = 12;
     }
+
     if (curr_hour > 12) {
         curr_hour = curr_hour - 12;
     }
+
+    if (curr_min < 10) {
+        cur_min = "0" + curr_min;
+    }
+
     dateAdded = curr_date + "-" + curr_month + "-" + curr_year + " at " + curr_hour + ":" + curr_min + " " + a_p;
 
     $('#textVal').val(' ');
@@ -36,6 +57,13 @@ $('#submit').on('click', function (e) {
 
         $listItems.text('Your post has been submitted.');
 
+        //------------------------------------------------------------------------------------------
+        // Responsible for detecting if an identical venue object has already been created, and will
+        // update the existing venue if one is found. It compares all the documents in the "Venue"
+        // collection to see if any match the venueID (from google places). If it finds a match
+        // (discovers an existing venue) the else statement will update the existing venue with the
+        // new post instead of creating two of the same venue objects.
+        //------------------------------------------------------------------------------------------
 
         var venueRef = db.collection("Venue").where("venueID", "==", $placeID);
         venueRef.get().then(function (querySnapshot) {

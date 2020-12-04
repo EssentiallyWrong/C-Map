@@ -6,7 +6,6 @@
  * @param {String} str 
  */
 function fillPost(str) {
-    var venueRef;
     document.getElementById("disposable").remove();
 
     venueRef = db.collection("Venue").where("venueID", "==", str);
@@ -51,7 +50,12 @@ function fillCards(venue) {
                 var userId = doc.data().userID;
                 var title = doc.data().title;
 
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const options = {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                };
                 var time = doc.data().timeStamp;
 
                 if (userId == "") {

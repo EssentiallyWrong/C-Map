@@ -120,7 +120,7 @@ function initMap() {
     infowindowContent.children.namedItem("place-name").textContent = place.name;
     infowindowContent.children.namedItem("place-id").textContent =
       place.place_id;
-    
+
     infowindow.open(map, marker);
 
 

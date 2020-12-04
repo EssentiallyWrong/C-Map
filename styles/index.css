@@ -38,13 +38,13 @@
   height: 100%;
   margin: 0px;
   padding: 0px;
-  
+
 }
 
 #addPost {
   border-color: transparent;
   background-color: #7289da;
-  
+
 }
 
 #overlay {
@@ -177,13 +177,13 @@ Background color for information form.
   width: 50px;
   background-color: white;
   border: white;
-  
+
 }
 
 .time {
-  
+
   text-align: right;
- margin: 0px;
+  margin: 0px;
 }
 
 .navbar-brand {
