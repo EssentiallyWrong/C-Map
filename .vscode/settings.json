@@ -1,13 +1,16 @@
 {
     "cSpell.ignoreWords": [
         "appspot",
+        "covid",
         "firebaseapp",
+        "firebaserc",
         "firebaseui",
         "firestore",
         "gettext",
         "googleplace",
         "googleplace id",
         "id",
-        "loginlink"
+        "loginlink",
+        "subfolders"
     ]
 }
