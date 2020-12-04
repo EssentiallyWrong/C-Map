@@ -8,6 +8,9 @@
 This browser based web application to crowd source COVID-19 information in a Google Maps interface. It will
 allow users to view local venues on a map interface and add posts to them for other users to view.
 
+At this time, our application is mobile-first, and best viewed from a limited browser size perspective.
+Recommended to select an autofill when using the search method to prevent errors.
+
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
