@@ -100,7 +100,7 @@ function initMap() {
               $("#locationName").text(place.name);
               $("#googlePlaceID").text(place.place_id);
               $("#overlay").show(1000);
-              testCheck(place.place_id);
+              fillPost(place.place_id);
 
               infowindowContent.children.namedItem("place-name").textContent = place.name;
               infowindowContent.children.namedItem("place-id").textContent =
@@ -144,7 +144,7 @@ function initMap() {
     infowindow.close();
     const place = autocomplete.getPlace();
 
-    testCheck(place.place_id);
+    fillPost(place.place_id);
     console.log(place.place_id);
 
     if (!place.geometry) {

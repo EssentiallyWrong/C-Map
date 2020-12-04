@@ -1,12 +1,12 @@
 
-
-var venueRef;
-
-
-marker();
-;
-
-function testCheck(str) {
+/**
+ * Checks wether the input str is a venueID for a venue in the firestore.
+ * if it is then it fills the comments
+ * it not then it adds a black card.
+ * @param {String} str 
+ */
+function fillPost(str) {
+    var venueRef;
     document.getElementById("disposable").remove();
 
     venueRef = db.collection("Venue").where("venueID", "==", str);
@@ -24,14 +24,7 @@ function testCheck(str) {
 
                 }
             });
-            /**   querySnapshot.forEach(function (doc) {
-
-                   var venueIdentifier = doc.id;
-                   console.log(venueIdentifier.venueID);
-                   fillCards(valueIdentifier);
-
-
-               })*/
+            
         }
 
     });
@@ -39,7 +32,10 @@ function testCheck(str) {
 
 
 
-
+/**
+ * fills the overlay with posts
+ * @param {String} venue 
+ */
 function fillCards(venue) {
 
 
@@ -78,6 +74,9 @@ function fillCards(venue) {
         })
 }
 
+/**
+ * adds the no comments card" to the overlay
+ */
 function addEmptyCard() {
 
 
