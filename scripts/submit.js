@@ -33,12 +33,19 @@ $('#submit').on('click', function (e) {
     } else {
         a_p = "PM";
     }
+
     if (curr_hour == 0) {
         curr_hour = 12;
     }
+
     if (curr_hour > 12) {
         curr_hour = curr_hour - 12;
     }
+
+    if (curr_min < 10) {
+        cur_min = "0" + curr_min;
+    }
+
     dateAdded = curr_date + "-" + curr_month + "-" + curr_year + " at " + curr_hour + ":" + curr_min + " " + a_p;
 
     $('#textVal').val(' ');

@@ -30,9 +30,14 @@ var uiConfig = {
         uiShown: function () {
             // The widget is rendered.
             // Hide the loader.
-            document.getElementById('loader').style.display = 'none';
+
+            //------------------------------------------------------------------------------------------
+            //Was causing Javascript error so commented out last section.
+            //document.getElementById('loader').style.display = 'none';
+            document.getElementById('loader')
         }
     },
+
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'popup',
     signInSuccessUrl: 'index.html',
@@ -51,7 +56,11 @@ var uiConfig = {
     tosUrl: 'index.html',
     // Privacy policy url.
     privacyPolicyUrl: 'index.html',
-    accountChooserEnabled: false
+
+    //------------------------------------------------------------------------------------------
+    //Was causing JavaScript errors so commented out for now.
+    //accountChooserEnabled: false
+
 };
 // The start method will wait until the DOM is loaded.
 // Then it will inject the login interface into the HTML.
