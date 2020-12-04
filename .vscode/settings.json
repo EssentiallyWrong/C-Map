@@ -1,8 +1,13 @@
 {
     "cSpell.ignoreWords": [
+        "appspot",
+        "firebaseapp",
+        "firebaseui",
+        "firestore",
         "gettext",
         "googleplace",
         "googleplace id",
-        "id"
+        "id",
+        "loginlink"
     ]
 }

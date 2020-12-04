@@ -4,15 +4,11 @@ var uiConfig = {
     callbacks: {
         signInSuccessWithAuthResult: function (authResult, redirectUrl) {
             // User successfully signed in.
-            // Return type determines whether we continue the redirect automatically
-            // or whether we leave that to developer to handle.
+            // Return type is not needed as users are redirected to index.html anyways.
             //------------------------------------------------------------------------------------------
-            // The code below is modified from default snippet provided by the FB documentation.
-            //
-            // If the user is a "brand new" user, then create a new "user" in your own database.
-            // Assign this user with the name and email provided.
-            // Before this works, you must enable "Firestore" from the firebase console.
-            // The Firestore rules must allow the user to write.
+
+            // If user does not exist in database, creates new "users" collection, with unique document
+            // ID's for each user account. Each document contains user email and user name.
             //------------------------------------------------------------------------------------------
             var user = authResult.user;
             if (authResult.additionalUserInfo.isNewUser) {
@@ -41,7 +37,9 @@ var uiConfig = {
     signInFlow: 'popup',
     signInSuccessUrl: 'index.html',
     signInOptions: [
-        // Leave the lines as is for the providers you want to offer your users.
+        //------------------------------------------------------------------------------------------
+        //Commented out all forms of authentication except email, which we are using.
+        //------------------------------------------------------------------------------------------
         //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
         //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
         //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
@@ -56,5 +54,5 @@ var uiConfig = {
     accountChooserEnabled: false
 };
 // The start method will wait until the DOM is loaded.
-// Inject the login interface into the HTML
+// Then it will inject the login interface into the HTML.
 ui.start('#firebaseui-auth-container', uiConfig);

@@ -43,8 +43,7 @@ function testCheck(str) {
 var venueRef;
 
 
-marker();
-;
+marker();;
 
 function testCheck(str) {
     document.getElementById("disposable").remove();
@@ -95,7 +94,12 @@ function fillCards(venue) {
                 var userId = doc.data().userID;
                 var title = doc.data().title;
 
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const options = {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                };
                 var time = doc.data().timeStamp;
 
                 if (userId == "") {
