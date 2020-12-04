@@ -1,4 +1,4 @@
-# webApp-Group21
+# webApp-Group21 - C-Map
 
 * [General info](#general-info)
 * [Technologies](#technologies)
