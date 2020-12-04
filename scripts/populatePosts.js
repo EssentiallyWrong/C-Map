@@ -1,51 +1,11 @@
-function readQuote() {
-    db.collection("quotes").doc("01")
-        .onSnapshot(function (snap) {
-            console.log(snap.data()); //print the document fields of "01"
-            console.log(snap.data().message);
-            document.getElementById("abc").innerText = snap.data().message;
-        })
-}
-/*
-function postRead() {
 
-
-    db.collection("readTests").doc("dObVaNLqiOcsHHnq7ym9").collection("Post").doc("asdf")
-        .onSnapshot(function (snap) {
-            document.getElementById("readTest").innerText = snap.data().post;
-
-        })
-}
-
-postRead();
-
-
-
-
-//ChIJ5f5T_SF3hlQRnRB6ZAeyWjU
-
-function testCheck(str) {
-    db.collection("Venue")
-        .get()
-        .then(function (snap) {
-            snap.forEach(function (doc) {
-                console.log(doc.data());
-                if(doc.data().venueID == str){
-                    fillCards();
-                } else {
-                    addEmptyCard();
-                }
-
-
-            })
-        })
-}*/
-var venueRef;
-
-
-marker();;
-
-function testCheck(str) {
+/**
+ * Checks wether the input str is a venueID for a venue in the firestore.
+ * if it is then it fills the comments
+ * it not then it adds a black card.
+ * @param {String} str 
+ */
+function fillPost(str) {
     document.getElementById("disposable").remove();
 
     venueRef = db.collection("Venue").where("venueID", "==", str);
@@ -63,14 +23,7 @@ function testCheck(str) {
 
                 }
             });
-            /**   querySnapshot.forEach(function (doc) {
-
-                   var venueIdentifier = doc.id;
-                   console.log(venueIdentifier.venueID);
-                   fillCards(valueIdentifier);
-
-
-               })*/
+            
         }
 
     });
@@ -78,7 +31,10 @@ function testCheck(str) {
 
 
 
-
+/**
+ * fills the overlay with posts
+ * @param {String} venue 
+ */
 function fillCards(venue) {
 
 
@@ -122,6 +78,9 @@ function fillCards(venue) {
         })
 }
 
+/**
+ * adds the no comments card" to the overlay
+ */
 function addEmptyCard() {
 
 

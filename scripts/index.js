@@ -1,33 +1,7 @@
-/*
-function readQuote() {
 
 
-  db.collection("readTests").doc("testId")
-    .onSnapshot(function (snap) {
-      console.log(snap.data()); //print the document fields of "01"
-      console.log(snap.data().fuckingTest);
-      markerTest = snap.data().gPlaceId;
-      // document.getElementById("readTest").innerText = snap.data().gPlaceId;
-      var temp = snap.data.gPlaceId;
-      markerTest = 'ChIJs0-pQ_FzhlQRi_OBm-qWkbs';
-    })
-}
 
-function postRead() {
-
-
-  db.collection("readTests").doc("dObVaNLqiOcsHHnq7ym9").collection("Post").doc("asdf")
-    .onSnapshot(function (snap) {
-      document.getElementById("readTest").innerText = snap.data().post;
-
-    })
-}
-
-postRead();
-*/
-
-
-//map init
+//map initialize the map
 function initMap() {
   // my code
   $('#overlay').hide();
@@ -42,18 +16,7 @@ function initMap() {
   });
 
   //marker testing
-  const myLatLng = {
-    lat: -25.363,
-    lng: 131.044
-  };
-  const myLat = {
-    lat: +25.363,
-    lng: -131.044
-  };
-
-
-
-
+ 
   const input = document.getElementById("pac-input");
   const autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo("bounds", map);
@@ -66,19 +29,12 @@ function initMap() {
   const infowindowContent = document.getElementById("infowindow-content");
 
 
+
   // adding markers from firestore;
-
-  // marker test
-
-
-
-
-
   db.collection("Venue").get()
     .then(function (snap) {
       snap.forEach(function (doc) {
         var id = doc.data().venueID
-
 
         var request = {
           placeId: id
@@ -100,12 +56,11 @@ function initMap() {
               $("#locationName").text(place.name);
               $("#googlePlaceID").text(place.place_id);
               $("#overlay").show(1000);
-              testCheck(place.place_id);
+              fillPost(place.place_id);
 
               infowindowContent.children.namedItem("place-name").textContent = place.name;
               infowindowContent.children.namedItem("place-id").textContent =
                 place.place_id;
-
 
               infowindow.open(map, m)
             });
@@ -115,11 +70,6 @@ function initMap() {
       });
 
     });
-
-
-
-
-
   infowindow.setContent(infowindowContent);
 
 
@@ -144,7 +94,7 @@ function initMap() {
     infowindow.close();
     const place = autocomplete.getPlace();
 
-    testCheck(place.place_id);
+    fillPost(place.place_id);
     console.log(place.place_id);
 
     if (!place.geometry) {
@@ -179,8 +129,5 @@ function initMap() {
 
   });
 }
-
-
-
 
 //end of map stuff
