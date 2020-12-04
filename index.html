@@ -3,30 +3,30 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+    <title>C-Map</title>
+    <meta name="Application" content="C-Map">
+    <meta name="author" content="Steven Reid, Tony Nan">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <!-- Connecting to Google Maps API -->
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIBKj6b6VZA668pd590ddr5bsku03ReYc&callback=initMap&libraries=places&v=weekly"
         defer></script>
 
-        <script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/26da0e4274.js" crossorigin="anonymous"></script>
+
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <!-- Optional styles and scripts of your own -->
+    <!-- CSS for this application -->
     <link rel="stylesheet" href="styles/index.css" />
 
 </head>
 
 <body>
 
-    <!-------------------------------------------->
-    <!-- The following is JS for functionality  -->
-    <!-------------------------------------------->
     <!-- Bootstrap libraries from CDN -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
@@ -44,9 +44,10 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 
-    <!-- Your own Firebase API key information -->
+    <!-- Firebase API key -->
     <script src="scripts/firebase_api_group21.js"> </script>
 
+    <!-- This is where the map is created -->
     <div id="holder">
         <div style="display: none">
             <input id="pac-input" class="controls" type="text" placeholder="Enter a location" />
@@ -63,14 +64,10 @@
         <div id="overlay">
             <div class="card" id="edit">
                 <div class="card-body">
-                    <div id = "backButton">
-                        
-                    <input type="submit" value = '🔙' class="change" id="goBack">
-                    
-                    
-                </div>
+                    <div id="backButton">
+                        <input type="submit" value='🔙' class="change" id="goBack">
+                    </div>
                     <h5 class="card-title">Add Comment</h5>
-
                     <h6 class="card-subtitle mb-2 text-muted">Enter your post below.</h6>
                     <div>
                         <ol class="listItems">
@@ -79,53 +76,49 @@
 
                     <!-- This is where you enter your text for a post -->
                     <div class="form-group">
-                        <!-- this right here is where I am getting post titles & entries from -->
+
+                        <!-- Javascript retrieves user information from here with JQuery -->
                         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Title">
                         <textarea class="form-control" placeholder="Comment Body" id="exampleFormControlTextarea1"
                             rows="5"></textarea>
                     </div>
+
                     <!-- Button to submit post -> submit.js called on click. -->
                     <input type="submit" class="btn btn-primary" value="Submit" id="submit">
                 </div>
             </div>
 
+            <!-- Creation of the cards that populate with posts from the database -->
             <div class="card" id="info">
                 <div class="card-body">
                     <h5 class="card-title dummyPost">
                         <input type="submit" value="X" class="hidePane">
-                        
-                        <p id="locationName">this didnt work</p>
-                        <p id="googlePlaceID">place holder</p>
-                        
+
+                        <p id="locationName"></p>
+                        <p id="googlePlaceID"></p>
+
                         <p id="userName"></p>
                         <p id="userID"></p>
-                        
-                        <div class="card userpost"  id ="addPost"> 
-                           
-                                <input type="submit" value="Add Comment" class="change btn btn-primary" id="changeStyle">
-                            
+
+                        <div class="card userpost" id="addPost">
+
+                            <input type="submit" value="Add Comment" class="change btn btn-primary" id="changeStyle">
+
                         </div>
-                        
 
                     </h5>
 
-
                     <div id="posts">
                         <div id="disposable"></div>
-
-
                     </div>
 
-
-
                 </div>
-                
 
             </div>
 
-
         </div>
 
+        <!-- JavaScript for user and post functionality. -->
         <script src="scripts/currentUser.js"></script>
         <script src="scripts/venue.js"></script>
         <script src="scripts/post.js"></script>
@@ -136,6 +129,7 @@
 
     </div>
 
+    <!-- Creation of navbar and associated functionality. -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navBar">
         <a class="navbar-brand" href="index.html"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house"
                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -144,7 +138,7 @@
                 <path fill-rule="evenodd"
                     d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
             </svg>
-        <span>C-Map</span></a>
+            <span>C-Map</span></a>
         <a class="navbar-brand" href=""><i class="far fa-heart"></i><span>Subscribed</span></a>
         <a class="navbar-brand" id="test" href=""><svg width="1em" height="1em" viewBox="0 0 16 16"
                 class="bi bi-clipboard" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -154,17 +148,19 @@
                     d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" />
             </svg><span>History</span></a>
         <a id="loginlink" class="navbar-brand" href="sign in.html">
-            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
             </svg> <span>Login</span>
         </a>
     </nav>
 
+    <!-- JavaScript for post, navbar and main page functionality. -->
     <script src="scripts/populatePosts.js"></script>
     <script src="scripts/hideShow.js"></script>
     <script src="scripts/index.js"> </script>
     <script src="scripts/logOut.js"> </script>
-
 
 </body>
 
