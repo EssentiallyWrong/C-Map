@@ -24,6 +24,8 @@ Technologies used for this project:
 ## ScreenShots
 ![alt text](https://github.com/EssentiallyWrong/C-Map/blob/main/images/MainPage.png)
 
+![alt text](https://github.com/EssentiallyWrong/C-Map/blob/main/images/PopUp.png)
+
 ## Content
 Content of the project folder:
 
