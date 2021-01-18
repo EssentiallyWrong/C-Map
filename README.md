@@ -21,6 +21,9 @@ Technologies used for this project:
 * Google Maps API
 * Visual Studio Code
 
+## ScreenShots
+![alt text](https://github.com/EssentiallyWrong/C-Map/blob/main/images/MainPage.jpg?raw=true)
+
 ## Content
 Content of the project folder:
 
