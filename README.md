@@ -22,7 +22,7 @@ Technologies used for this project:
 * Visual Studio Code
 
 ## ScreenShots
-![alt text](https://github.com/EssentiallyWrong/C-Map/blob/main/images/MainPage.jpg?raw=true)
+![alt text](https://github.com/EssentiallyWrong/C-Map/blob/main/images/MainPage.png)
 
 ## Content
 Content of the project folder:
