@@ -1,5 +1,6 @@
 # webApp-Group21 - C-Map
 
+
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
@@ -11,13 +12,15 @@ allow users to view local venues on a map interface and add posts to them for ot
 At this time, our application is mobile-first, and best viewed from a limited browser size perspective.
 Recommended to select an autofill when using the search method to prevent errors.
 
+https://comp-1800-webapp-project.web.app/
+
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap
 * Firebase
-* git
+* Git
 * Google Maps API
 * Visual Studio Code
 
